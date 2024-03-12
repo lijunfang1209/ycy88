@@ -2,7 +2,7 @@
 
 体验一下快如闪电的全新VUE脚手架工具：
 
-![An image](~@/vue/create-vue.png)
+![An image](@/vue/create-vue.png)
 
 ### 一、初始化 VUE3 项目
 ```js

@@ -16,7 +16,7 @@ GitLab Flow则是吸收了Git Flow和GitHub Flow的优点，遵循“上游优�
 
 ### 一、GitLab Flow的持续发布
 Gitlab flow 分成两种情况，适应不同的开发流程。
-<img width="400" src="~@/tools/gitlabflow/gitlabflow.png" />
+<img width="400" src="@/tools/gitlabflow/gitlabflow.png" />
 
 对于“持续发布”的项目，它建议在master分支以外，再建立不同的环境分支。比如，“开发环境”的分支是master，“预发环境”的分支是pre-production，“生产环境”的分支是production。
 
@@ -25,7 +25,7 @@ Gitlab flow 分成两种情况，适应不同的开发流程。
 只有紧急情况，才允许跳过上游，直接合并到下游分支。
 
 ### 二、GitLab Flow的版本发布
-<img width="400" src="~@/tools/gitlabflow/gitlabflow-2.png" />
+<img width="400" src="@/tools/gitlabflow/gitlabflow-2.png" />
 
 对于“版本发布”的项目，建议的做法是每一个稳定版本，都要从master分支拉出一个分支，比如2-3-stable、2-4-stable等等。
 

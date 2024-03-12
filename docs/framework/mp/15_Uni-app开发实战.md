@@ -4,7 +4,7 @@
 
 下载 HBuilderX，并新建模板
 
-<img width="100%" src="~@/mp/uni-app/uni-app.png" /><br/>
+<img width="100%" src="@/mp/uni-app/uni-app.png" /><br/>
 
 ### 二、建立底部 tab
 
@@ -96,11 +96,11 @@
 
 #### 2.2 pages 目录新建 tab 相关模板，static 目录新建相关 icon
 
-<img width="800" src="~@/mp/uni-app/uni-app-2.png" /><br/>
+<img width="800" src="@/mp/uni-app/uni-app-2.png" /><br/>
 
 #### 2.3 最终效果
 
-<img width="600" src="~@/mp/uni-app/uni-app-3.png" /><br/>
+<img width="600" src="@/mp/uni-app/uni-app-3.png" /><br/>
 
 ### 三、引入 UI 组件库：uview-ui
 
@@ -182,7 +182,7 @@ Vue.use(uView);
 }
 ```
 
-<img width="600" src="~@/mp/uni-app/uni-app-4.png" /><br/>
+<img width="600" src="@/mp/uni-app/uni-app-4.png" /><br/>
 
 ### 四、自定义 UI 组件库
 
@@ -245,8 +245,8 @@ TODO...
 
 使用第三方组件库，代码运行在不同平台，表现出较为明显的差异性。
 
-<img width="600" src="~@/mp/uni-app/uni-app-5.png" />
-<img width="600" src="~@/mp/uni-app/uni-app-6.png" /><br/>
+<img width="600" src="@/mp/uni-app/uni-app-5.png" />
+<img width="600" src="@/mp/uni-app/uni-app-6.png" /><br/>
 
 根本原因在于：因为在小程序端，原本是一层的元素，被它搞成两层了，所以我们传递过去的 class 属性只应用在外层，而内层才是真正 button。
 
@@ -260,7 +260,7 @@ u-button {
 }
 ```
 
-<img width="800" src="~@/mp/uni-app/uni-app-7.png" /><br/>
+<img width="800" src="@/mp/uni-app/uni-app-7.png" /><br/>
 
 ### 七、常用场景 DEMO 验证
 
@@ -940,8 +940,8 @@ export default {
 :::
 
 - H5 & 小程序截图：<br/>
-  <img width="800" src="~@/mp/uni-app/uni-app-8.png" /><br/>
-  <img width="800" src="~@/mp/uni-app/uni-app-9.png" /><br/>
+  <img width="800" src="@/mp/uni-app/uni-app-8.png" /><br/>
+  <img width="800" src="@/mp/uni-app/uni-app-9.png" /><br/>
 
 ::: warning 验证实录
 

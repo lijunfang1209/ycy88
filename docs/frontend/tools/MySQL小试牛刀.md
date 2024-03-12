@@ -6,13 +6,13 @@
 
 #### 1.1 安装的步骤，基本上一路 Next 即可
 
-<img width="600" src="~@/tools/mysql/mysql.png" /><br/>
-<img width="600" src="~@/tools/mysql/mysql_2.png" /><br/>
-<img width="600" src="~@/tools/mysql/mysql_3.png" /><br/>
-<img width="600" src="~@/tools/mysql/mysql_4.png" /><br/>
-<img width="600" src="~@/tools/mysql/mysql_5.png" /><br/>
-<img width="600" src="~@/tools/mysql/mysql_6.png" /><br/>
-<img width="600" src="~@/tools/mysql/mysql_7.png" /><br/>
+<img width="600" src="@/tools/mysql/mysql.png" /><br/>
+<img width="600" src="@/tools/mysql/mysql_2.png" /><br/>
+<img width="600" src="@/tools/mysql/mysql_3.png" /><br/>
+<img width="600" src="@/tools/mysql/mysql_4.png" /><br/>
+<img width="600" src="@/tools/mysql/mysql_5.png" /><br/>
+<img width="600" src="@/tools/mysql/mysql_6.png" /><br/>
+<img width="600" src="@/tools/mysql/mysql_7.png" /><br/>
 
 #### 1.2 配置环境变量（window）
 
@@ -29,8 +29,10 @@
 #### 2.1 使用可视化工具：Navicat
 
 #### 2.2 建立 Test 表
-
-<img width="100%" src="~@/tools/mysql/mysql_8.png" /><br/>
+<!-- @/tools/mysql/mysql_8.png -->
+<img width="100%" src="@/tools/mysql/mysql_8.png" />
+<!-- ![Image from /alias](~@alias/tools/mysql/mysql_8.png) -->
+<br/>
 
 ### 三、具体使用
 
@@ -231,7 +233,7 @@ module.exports = router;
 
 #### 3.3 浏览器访问 localhost:3000/users/ 即可得到如下数据
 
-<img width="100%" src="~@/tools/mysql/mysql_9.png" /><br/>
+<img width="100%" src="@/tools/mysql/mysql_9.png" /><br/>
 
 ### 四、常见问题
 

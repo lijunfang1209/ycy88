@@ -1,7 +1,7 @@
-## Hello VUE
+### Hello 算法（algorithm）
 
 ::: tip 专题简介
-VUE 专题
+算法（algorithm）专题
 :::
 
 ::: tip
@@ -16,4 +16,4 @@ VUE 专题
 5. 我要怎么用它？需要注意什么地方？
    :::
 
-![An image](~@/prev/vue.png)
+<img width="300" src="@/algorithm/algorithm.png" />

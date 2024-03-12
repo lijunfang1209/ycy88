@@ -1,79 +1,93 @@
-// 侧边栏
+//侧边栏自动生成
+// const autosidebar = require('vuepress-auto-sidebar-doumjun')
 const fs = require('fs')
 const path = require('path')
+const navlist = require('../navConfig')
+ 
+/**
+ * 过滤所要导航的文件
+ * 文件名 包含.md 但 不包含  README */
+function checkFileType(path) {
+    return path.includes(".md")&&(!path.includes("README"));
+}
+ 
+/**
+ * 格式化文件路径*/
+function prefixPath(basePath, dirPath) {
+    let index = basePath.indexOf("/")
+// 去除一级目录地址
+    basePath = basePath.slice(index, path.length)
+// replace用于处理windows电脑的路径用\表示的问题
+    return path.join(basePath, dirPath).replace(/\\/g, "/")
+}
+ 
+/**
+ * 截取文档路径*/
+function getPath(path,ele) {
+    let item=prefixPath(path,ele);
+    if (item.split('/')[6]) {
+        return item.split('/')[3] + '/' + item.split('/')[4]+ '/' + item.split('/')[5]+ '/' + item.split('/')[6]
+    }else if (item.split('/')[5]) {
+        return item.split('/')[3] + '/' + item.split('/')[4]+ '/' + item.split('/')[5]
+    }else if (item.split('/')[4]) {
+        return item.split('/')[3] + '/' + item.split('/')[4]
+    } else {
+        return item.split('/')[3]
+    }
+}
 
-function getChildren(path, sort = true) {
-    // console.log(111, path)
-    // 相对路径
-    let prPath = ''
-    let root = []
-    readDirSync(path, root)
-    // console.log(777, root)
-    root = root.map(item=>{
-        if (item.split('/')[3]) {
-            return '/' + item.split('/')[2] + '/' + item.split('/')[3]
-        } else {
-            return '/' + item.split('/')[2]
-        }
-    })
-    // console.log(8888, root)
-    // 排序
-    if (sort) {
-        let sortList = []
-        let nosortList = []
-        root.forEach(item=>{
-            if (item.replace(".md", "").match(/\d+_/)) {
-                sortList.push(item)
-            } else {
-                nosortList.push(item)
+/**
+ * 获取文件夹别名，中文名称
+ * @returns 返回枚举类型:文件夹对应的中文别名
+ */
+ function getFoldAlias(){
+    const format = function(list,obj){
+        list.map(function(item){
+            if(item.ariaLabel && !obj[item.ariaLabel]){
+                obj[item.ariaLabel] = item.text
+            }
+            if(item.items){
+                format(item.items,obj)
             }
         })
-        // console.log('xxxx: ', sortList)
-        root = sortList.sort(function(a, b) {
-            return parseInt(a.replace(".md","").match(/\d+_/)[0]) - parseInt(b.replace(".md","").match(/\d+_/)[0])
-        }).concat(nosortList)
+        return obj;
     }
-    
-    return root.map(item => {
-        let splitArr = item.split('/');
-        // 返回一个二维数组
-        return [
-            item.split('.md')[0],
-            splitArr[splitArr.length - 1].split('.md')[0].replace(/\d+_/, '')
-        ]
+    return format(navlist,{})
+ };
+/**
+ * 递归获取分组信息并排序*/
+function getGroupChildren(path,ele,root) {
+    let pa = fs.readdirSync(path + "/" + ele + "/");
+    let palist=pa; 
+    pa = palist.sort(function (a, b) {
+        return a.replace(".md", "").match(/[^-]*$/) - b.replace(".md", "").match(/[^-]*$/)
     });
-}
-
-function readDirSync(path, root){
-    // console.log(222, path, root)
-    var pa = fs.readdirSync(path);
-    // console.log(444, pa)
-    pa.forEach(function(ele, index) {
-        var info = fs.statSync(path+"/" + ele)
+    pa.forEach(function (item, index) {
+        let info = fs.statSync(path + "/" + ele + "/" + item);
         if (info.isDirectory()) {
-            readDirSync(path + ele, root)
+            let children = [];
+            let group = {};
+            const foldEnum = getFoldAlias();
+            const foldName = item.split('-')[0];
+            group.title = foldEnum[foldName] || foldName;
+            group.collapsable = true;
+            group.sidebarDepth = 2;
+            getGroupChildren(path + "/" + ele, item, children);
+            group.children=children;
+            root.unshift(group);
         } else {
-            if (checkFileType(ele)) {
-                root.push(prefixPath(path, ele))
+            if (checkFileType(item)) {
+               root.unshift(getPath(path + "/" + ele, item));
             }
         }
     })
 }
-
-function checkFileType (path) {
-    return path.includes(".md") && !path.includes("README.md") && !path.includes("_hidden.md")
+/**
+ * 初始化*/
+function getChildren(path,ele){
+    var root=[]
+    getGroupChildren(path,ele,root);
+    return root;
 }
-
-function prefixPath (basePath, dirPath) {
-    // console.log(333, basePath, dirPath)
-    let index = basePath.indexOf("/");
-    // 去除一级目录地址
-    basePath = basePath.slice(index, path.length)
-    // console.log(555, index, basePath)
-    // replace用于处理windows电脑的路径用\表示的问题
-    return path.join(basePath, dirPath).replace(/\\/g,"/")
-}
-
-module.exports = {
-    getChildren
-}
+ 
+module.exports = {getChildren: getChildren};
