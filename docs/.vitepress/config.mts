@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import {nav,sidebar} from "./data/index"
 import path from "path";
 // https://vitepress.dev/reference/site-config
-console.log(343434,sidebar);
+console.log(3222,path);
 
 export default defineConfig({
   title: "前端博客小站 - Ms. Li",
@@ -35,19 +35,63 @@ export default defineConfig({
     //     ]
     //   }
     // ],
-    sidebar,
-    // sidebar:{
-    //   '/vue/':[
-    //     {
-    //       text: 'ddd',
-    //       items: [
-    //       { text: 'Markdown Examples', link: '/markdown-examples' },
-    //       { text: 'Runtime API Examples', link: '/api-examples' },
-    //       { text: 'Runtime API Examples', link: '/test' },
-    //     ]
-    //     }
-    //   ]
+    // sidebar,
+    // sidebar:[{
+    //   text: 'ddd',
+    //   collapsed: false,
+    //   items: [
+    //     { text: 'test',collapsed: false, items:[ { text: 'Markdown Examples', link: '/markdown-examples' },
+    //     { text: 'Runtime API Examples', link: '/api-examples' },] },
+    //     { text: 'cccc', items:[ { text: 'Markdown Examples', link: '/markdown-examples' },
+    //     { text: 'Runtime API Examples', link: '/api-examples' },] },
+    //   { text: 'Markdown Examples', link: '/markdown-examples' },
+    //   { text: 'Runtime API Examples', link: '/api-examples' },
+    //   { text: 'Runtime API Examples', link: '/test' },
+    // ]
     // },
+    // {
+    //   text: 'ddd',
+    //   collapsed: false,
+    //   items: [
+    //     { text: 'test',collapsed: false, items:[ { text: 'Markdown Examples', link: '/markdown-examples' },
+    //     { text: 'Runtime API Examples', link: '/api-examples' },] },
+    //     { text: 'cccc', items:[ { text: 'Markdown Examples', link: '/markdown-examples' },
+    //     { text: 'Runtime API Examples', link: '/api-examples' },] },
+    //   { text: 'Markdown Examples', link: '/markdown-examples' },
+    //   { text: 'Runtime API Examples', link: '/api-examples' },
+    //   { text: 'Runtime API Examples', link: '/test' },
+    // ]
+    // }],
+    sidebar:{
+      '/vue/':[
+        {
+          text: 'ddd',
+          collapsed: false,
+          items: [
+            { text: 'test', items:[ { text: 'Markdown Examples', link: '/markdown-examples' },
+            { text: 'Runtime API Examples', link: '/api-examples' },] },
+            { text: 'cccc', items:[ { text: 'Markdown Examples', link: '/markdown-examples' },
+            { text: 'Runtime API Examples', link: '/api-examples' },] },
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Runtime API Examples', link: '/test' },
+        ]
+        },
+        {
+          text: '5555',
+          collapsed: false,
+          items: [
+            { text: 'test',collapsed: false, items:[ { text: 'Markdown Examples', link: '/markdown-examples' },
+            { text: 'Runtime API Examples', link: '/api-examples' },] },
+            { text: 'cccc', items:[ { text: 'Markdown Examples', link: '/markdown-examples' },
+            { text: 'Runtime API Examples', link: '/api-examples' },] },
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Runtime API Examples', link: '/test' },
+        ]
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
