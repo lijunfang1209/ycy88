@@ -19,14 +19,14 @@
 ssl证书控制台 -> 申请免费证书 -> 按页面提示，填入相关信息 -> 验证信息 -> 等待验证通过
 
 #### 申请免费证书
-![An image](~@/tools/tools_aliyun.jpeg)
+![An image](/images/tools/tools_aliyun.jpeg)
 
 #### 证书下载，需要上传到阿里云服务器里面
 我是下载的 Nginx 相关的，并部署到 nginx 的 cert目录（自定义的）。
-![An image](~@/tools/tools_aliyun2.png)
+![An image](/images/tools/tools_aliyun2.png)
 
 #### 配置安全组
-![An image](~@/tools/tools_aliyun3.png)
+![An image](/images/tools/tools_aliyun3.png)
 
 
 #### 三、Nginx配置
@@ -126,8 +126,8 @@ configure arguments: --with-http_stub_status_module --with-http_ssl_module
 
 
 ### 四、效果截图
-![An image](~@/tools/tools_aliyun4.png)
-![An image](~@/tools/tools_aliyun5.png)
+![An image](/images/tools/tools_aliyun4.png)
+![An image](/images/tools/tools_aliyun5.png)
 
 
 

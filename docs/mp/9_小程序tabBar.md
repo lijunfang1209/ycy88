@@ -66,7 +66,7 @@ App<IAppOption>({
 
 ### 三、DEMO截图
 
-![An image](~@/mp/mp_tabbar.png)
+![An image](/images/mp/mp_tabbar.png)
 
 
 如果要自定义tabBar，可以参考小程序官网提供的方法：<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html" target="_blank">自定义 tabBar</a>

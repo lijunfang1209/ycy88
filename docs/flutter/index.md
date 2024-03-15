@@ -1,10 +1,10 @@
-## Hello Typescript
+## flutter
 
 ::: tip 专题简介
-Typescript 专题
+小程序专题
 :::
 
-::: tip
+<!-- ::: tip
 ⭐️⭐️⭐️⭐️⭐️ 专注于前端领域，“凡事必有回响”。⭐️⭐️⭐️⭐️⭐️
 
 技术文档「它」的核心要素应该包括：
@@ -14,20 +14,8 @@ Typescript 专题
 3. 它的优势是什么？有什么不足？
 4. 它的竞品有哪些？各有什么特点？
 5. 我要怎么用它？需要注意什么地方？
-   :::
+   ::: -->
 
-::: tip 直接运行 ts 文件
-ts-node 可以直接运行 ts 代码, 需要在全局去安装。
-:::
+<!-- ![An image](/images/mp/gh_code.jpg) -->
 
-```js
-// 1. 全局安装 typescript
-$ npm i -g typescript
-// 2. 编译TS文件： tsc **.ts
-
-// 1. 全局安装 ts-node
-$ npm i -g ts-node
-// 2. 运行TS文件： ts-node **.ts
-```
-
-![An image](/images/prev/ts.png)
+<!-- ![An image](/images/mp/mp.jpeg) -->

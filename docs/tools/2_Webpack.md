@@ -146,4 +146,4 @@ TODO...
 ::: -->
 
 整理的思维导图：
-![An image](~@/prev/tools_webpack.png)
+![An image](/images/prev/tools_webpack.png)

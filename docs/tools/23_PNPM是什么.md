@@ -20,7 +20,7 @@ $ npm install -g pnpm
 
 ### 二、对比yarn与npm
 
-![An image](~@/tools/pnpm.png)
+![An image](/images/tools/pnpm.png)
 
 
 ### 三、pnpm的特点解析
@@ -39,7 +39,7 @@ $ npm install -g pnpm
 
 默认情况下，pnpm 使用软链的方式将项目的直接依赖添加进模块文件夹的根目录。
 
-![An image](~@/tools/pnpm_1.jpeg)
+![An image](/images/tools/pnpm_1.jpeg)
 
 
 ### 四、常见命令

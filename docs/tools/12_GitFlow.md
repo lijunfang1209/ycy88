@@ -55,7 +55,7 @@ Gitflow 越来越受欢迎，有利于基于主干的工作流，现在被认为
 ```
 
 
-![An image](~@/tools/gitflow.svg)
+![An image](/images/tools/gitflow.svg)
 
 参考：<br />
 <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow" target="_blank">Gitflow Workflow</a><br />

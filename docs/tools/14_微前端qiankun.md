@@ -296,7 +296,7 @@ export async function update(props) {
   </div>
 </template>
 ```
-![An image](~@/tools/qiankun_demo.png)
+![An image](/images/tools/qiankun_demo.png)
 
 ### 四、DEMO验证
 ```js
@@ -360,7 +360,7 @@ div[data-qiankun="vueApp"] .common-blue {
   color: green;
 }
 ```
-![An image](~@/tools/qiankun_demo2.png)
+![An image](/images/tools/qiankun_demo2.png)
 ::: warning 注意：样式丢失问题
 子应用的弹窗、抽屉、popover因插入到了「基座应用」的body导致样式丢失或应用了「基座应用」的样式。
 
@@ -502,7 +502,7 @@ div[data-qiankun="vueApp"] .common-blue {
 ```
 :::
 
-![An image](~@/tools/qiankun_demo3.png)
+![An image](/images/tools/qiankun_demo3.png)
 
 
 #### 2、JS沙箱

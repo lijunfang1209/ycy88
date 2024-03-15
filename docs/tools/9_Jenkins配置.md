@@ -31,6 +31,6 @@ Jenkins 是开源 CI&CD 软件领导者， 提供超过 1000 个插件来支持�
 
 ### 二、运行截图
 
-<img width="100%" src="~@/tools/jenkins/jenkins.png" /><br/>
+<img width="100%" src="/images/tools/jenkins/jenkins.png" /><br/>
 
 ### 三、TODO

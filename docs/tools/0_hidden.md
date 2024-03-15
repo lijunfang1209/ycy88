@@ -4,7 +4,7 @@
 Todo
 :::
 
-![An image](~@/tools/husky.png)
+![An image](/images/tools/husky.png)
 
 1. 前端工程化
 

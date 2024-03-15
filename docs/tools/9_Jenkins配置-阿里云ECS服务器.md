@@ -41,9 +41,9 @@
   - 保存退出： (esc 按键) + (:wq!)
 - 查找 jdk 安装位置，将位置配置到 jenkins 里面：
   - whereis java
-    <img width="100%" src="~@/tools/jenkins/jenkins_1.png" /><br/>
+    <img width="100%" src="/images/tools/jenkins/jenkins_1.png" /><br/>
   - vim /etc/init.d/jenkins
-    <img width="100%" src="~@/tools/jenkins/jenkins_2.png" /><br/>
+    <img width="100%" src="/images/tools/jenkins/jenkins_2.png" /><br/>
 - 重启 Jenkins：
 
   - systemctl start jenkins
@@ -55,7 +55,7 @@
   systemctl restart jenkins
   ```
 
-  <img width="100%" src="~@/tools/jenkins/jenkins_3.png" /><br/>
+  <img width="100%" src="/images/tools/jenkins/jenkins_3.png" /><br/>
 
 :::warning Tip
 这里可能会出现 ip:8888 访问不了的情况，由于是使用阿里云服务器，所以需要去配置安全组规则。
@@ -65,7 +65,7 @@
 
 ### 二、运行截图
 
-<!-- <img width="100%" src="~@/tools/jenkins/jenkins.png" /><br/> -->
+<!-- <img width="100%" src="/images/tools/jenkins/jenkins.png" /><br/> -->
 
 ### 三、TODO
 
