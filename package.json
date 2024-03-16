@@ -9,8 +9,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-rc.45",
-    "vuepress": "^1.9.7"
+    "vitepress": "1.0.0-rc.45"
   },
   "dependencies": {
     "ts-node": "^10.9.1"
