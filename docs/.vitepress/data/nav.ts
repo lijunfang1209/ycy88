@@ -2,7 +2,7 @@ export const nav = [
     {
       text: "前端",
       items: [
-        { text: "前端规范", link: "/frontend/" },
+        { text: "前端规范", link: "/standard/" },
         { text: "前端工程化", link: "/tools/" },
         { text: "协议相关", link: "/protocol/" },
         { text: "效率提升", link: "/efficiency/" },

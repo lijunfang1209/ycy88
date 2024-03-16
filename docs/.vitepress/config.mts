@@ -62,9 +62,7 @@ export default defineConfig({
     //   { text: 'Runtime API Examples', link: '/test' },
     // ]
     // }],
-    sidebar:{
-      '/vue/':getChildren({ele:'vue'}),
-    },
+    sidebar,
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
