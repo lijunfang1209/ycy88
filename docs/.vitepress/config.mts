@@ -1,11 +1,11 @@
 import { defineConfig } from 'vitepress'
-import {nav,sidebar} from "./data/index"
-import path from "path";
+import { nav, sidebar } from './data/index'
+import path from 'path'
 // https://vitepress.dev/reference/site-config
 
 export default defineConfig({
-  title: "前端博客小站 - Ms. Li",
-  description: "技术清单文档",
+  title: '前端博客小站 - Ms. Li',
+  description: '技术清单文档',
   themeConfig: {
     search: {
       provider: 'local'
@@ -20,16 +20,17 @@ export default defineConfig({
   },
   markdown: {
     lineNumbers: true,
+    linkify: false // 禁用链接的自动转换
   },
   lastUpdated: true,
-  cleanUrls:true,
-  vite:{
-    resolve:{
-      alias:[
+  cleanUrls: true,
+  vite: {
+    resolve: {
+      alias: [
         {
-          find: "@",
-          replacement: path.resolve(__dirname, ".vitepress"),
-        },
+          find: '@',
+          replacement: path.resolve(__dirname, '.vitepress')
+        }
       ]
     }
   }
