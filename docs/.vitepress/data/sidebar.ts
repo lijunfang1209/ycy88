@@ -89,4 +89,7 @@ export const sidebar = {
         items: getChildren({ele:'mgt'}),
       },
     ],
+    // "/vueInterview/": getChildren({ele:'vueInterview'}),
+    // "/jsInterview/": getChildren({ele:'jsInterview'}),
+    "/interview/": getChildren({ele:'interview',collapsed:true}),
   }

@@ -30,6 +30,10 @@ export const nav = [
       ],
     },
     {
+      text: "面试总结",
+      link:"/interview/",
+    },
+    {
       text: "读书系列",
       items: [
         { text: "读书破万卷", link: "/readbook/" },
