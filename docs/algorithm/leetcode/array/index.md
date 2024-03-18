@@ -1,7 +1,7 @@
-### Hello 算法（algorithm）
-
+### Hello Leetcode
+<!-- {foldName:数组实践} -->
 ::: tip 专题简介
-算法（algorithm）专题
+Leetcode 专题
 :::
 
 ::: tip
@@ -16,4 +16,4 @@
 5. 我要怎么用它？需要注意什么地方？
    :::
 
-<img width="300" src="/images/algorithm/algorithm.png" />
+![An image](/images/prev/web.jpg)

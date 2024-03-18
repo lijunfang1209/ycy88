@@ -18,8 +18,6 @@ export const nav = [
         { text: "小程序 系列", link: "/mp/" },
         { text: "Flutter 系列", link: "/flutter/" },
         { text: "Electron 系列", link: "/electron/" },
-        { text: "算法(Algorithm)", link: "/algorithm/" },
-        { text: "算法Leetcode", link: "/leetcode/" },
       ],
     },
     {
@@ -27,6 +25,7 @@ export const nav = [
       items: [
         { text: "JS基础", link: "/js-base/" },
         { text: "JS原理", link: "/js-theory/" },
+        { text: "JS算法", link: "/algorithm/" },
         { text: "JS进阶", link: "/js-advanced/" },
       ],
     },

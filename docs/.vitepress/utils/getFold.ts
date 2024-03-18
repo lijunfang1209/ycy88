@@ -11,7 +11,7 @@ import { SidebarItems } from "../type";
  * 过滤所要导航的文件
  * 文件名 包含.md 但 不包含  README */
 const checkFileType = (path)=> {
-    return path.includes(".md")&&(!path.includes("index"));
+    return path.includes(".md")&&(!path.includes("index") && !path.includes("hidden"));
 }
  
 /**
@@ -43,7 +43,7 @@ const prefixPath = (basePath, dirPath) => {
  };
 /**
  * 递归获取分组信息并排序*/
-const getGroupChildren = (path,ele,root)=> {
+const getGroupChildren = (path,ele,root,collapsed)=> {
     let pa = fs.readdirSync(path + "/" + ele + "/");
     const basePath = `${path}/${ele}`;
     const regEx = /\d+_/;
@@ -59,8 +59,9 @@ const getGroupChildren = (path,ele,root)=> {
             const foldAlias = await getFoldAlias(basePath,item) as string
             const foldName = item.split('-')[0];
             group.text = foldAlias || foldName;
-            getGroupChildren(path, `${ele}/${item}`, children);
+            getGroupChildren(path, `${ele}/${item}`, children,collapsed);
             group.items=children;
+            group.collapsed = collapsed;
             root.push(group);
         } else {
             if (checkFileType(item)) {
@@ -71,11 +72,9 @@ const getGroupChildren = (path,ele,root)=> {
 }
 /**
  * 初始化*/
-export const getChildren = ({ele})=>{
+export const getChildren = ({ele,collapsed})=>{
     var root=[]
-    getGroupChildren('./docs',ele,root);
-    console.log(2222,root);
-    
+    getGroupChildren('./docs',ele,root,collapsed);
     return root;
 }
  

@@ -1,7 +1,7 @@
-### Hello 算法（algorithm）
-
+## Hello Node
+<!-- {foldName:Node框架实战} -->
 ::: tip 专题简介
-算法（algorithm）专题
+Node 专题
 :::
 
 ::: tip
@@ -16,4 +16,8 @@
 5. 我要怎么用它？需要注意什么地方？
    :::
 
-<img width="300" src="/images/algorithm/algorithm.png" />
+![An image](/images/prev/node.png)
+
+参考地址：<br/>
+<a href="https://nodejs.org/zh-cn/" target="_blank">NodeJS（中文版）</a><br />
+<a href="https://nodejs.org/en/" target="_blank">NodeJS（英文版）</a><br />

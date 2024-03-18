@@ -2,17 +2,54 @@ import { getChildren } from "../utils/getFold";
 
 // import { getChildren } from "../utils/autoSidebar";
 const BASE_PATH = "./docs";
-
 export const sidebar = {
   '/vue/':getChildren({ele:'vue'}),
   '/standard/':[
     {
-      text: "前端规范",
-      link: "/standard/",
+      
       items: getChildren({ele:'standard'}),
     },
   ],
   "/tools/": getChildren({ele:'tools'}),
+  "/protocol/": [
+    {
+      text: "协议相关",
+      link: "/protocol/",
+      items:getChildren({ele:'protocol'})
+    }
+  ],
+  "/efficiency/": [
+    {
+      text: "效率相关",
+      link: "/efficiency/",
+      items:getChildren({ele:'efficiency'})
+    }
+  ],
+  '/react/':getChildren({ele:'react'}),
+   "/ts/": [
+      {
+        text: "Typescript系列",
+        link: "/ts/",
+        items: getChildren({ele:'ts'}),
+      },
+    ],
+   "/node/":getChildren({ele:'node'}),
+    "/mp/":getChildren({ele:'mp'}),
+    "/flutter/": [
+      {
+        text: "Flutter 系列",
+        link: "/flutter/",
+        items: getChildren({ele:'flutter'}),
+      },
+    ],
+    "/electron/": [
+      {
+        text: "Electron 系列",
+        link: "/electron/",
+        items: getChildren({ele:'electron'}),
+      },
+    ],
+    "/algorithm/": getChildren({ele:'algorithm',collapsed:true}),
   }
 // export const sidebar = {
 //     "/vue/": [

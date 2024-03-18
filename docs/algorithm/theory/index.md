@@ -1,5 +1,5 @@
 ### Hello 算法（algorithm）
-
+<!-- {foldName:算法理论底层思维} -->
 ::: tip 专题简介
 算法（algorithm）专题
 :::

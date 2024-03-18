@@ -1,5 +1,6 @@
 export interface SidebarItems {
     text?:string;
     link?:string;
-    items?:SidebarItems[]
+    items?:SidebarItems[];
+    collapsed?:boolean;
 }
