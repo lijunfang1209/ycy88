@@ -72,7 +72,7 @@ const getGroupChildren = (path,ele,root,collapsed)=> {
 }
 /**
  * 初始化*/
-export const getChildren = ({ele,collapsed})=>{
+export const getChildren = ({ele,collapsed=false})=>{
     var root=[]
     getGroupChildren('./docs',ele,root,collapsed);
     return root;
