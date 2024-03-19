@@ -1,47 +1,52 @@
-## 事件循环机制
+# 事件循环机制
+
 js 是单线程程序，事件循环是 js 的执行机制。所有的同步任务都是在主线上执行，主线程还有一个队列，宏任务和微任务是放在队列里面，等待执行，当主线程任务全部执行完之后，就会去执行队列里面的任务，微任务永远在宏任务执行之前。宏任务下一个事件执行的开始，每次执行一个宏任务之后就会进行下一轮的事件执行机制，一直这么执行下去，直到任务清空。
 
 ### 如何循环
 
 第一次进入整体代码 script（宏任务，开始第一次循环，接着执行所有的微任务。然后再次从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。
 
-### js执行机制
+### js 执行机制
+
 同步任务（主线程）整体代码 script（宏任务） => 微任务 => 下一个宏任务 => 循环下去。
 
-### js事件
+### js 事件
+
 广义上的同步和异步，更细致的又分宏任务和微任务
 宏任务：整体代码 script,setTimeOut,setInterval.
 微任务：promise,nextTick.
 
 ### 练习题目
+
 ```js
-setTimeout(function(){
-    console.log('定时器开始啦')//4
-});
-new Promise(function(resolve){
-    console.log('马上执行for循环啦');  //1
-    for(var i = 0; i < 10000; i++){
-        i == 99 && resolve();
-    }
-}).then(function(){
-    console.log('执行then函数啦') //3 
-});
- 
-console.log('代码执行结束'); //2
+setTimeout(function () {
+  console.log('定时器开始啦') //4
+})
+new Promise(function (resolve) {
+  console.log('马上执行for循环啦') //1
+  for (var i = 0; i < 10000; i++) {
+    i == 99 && resolve()
+  }
+}).then(function () {
+  console.log('执行then函数啦') //3
+})
+
+console.log('代码执行结束') //2
 
 //结果输出:马上执行for循环啦 > 代码执行结束 > 执行then函数啦 > 定时器开始啦
 ```
-异步任务进一步分析
-```js
 
-console.log(1);
-setTimeout(function() {
-    console.log(2);
-},1000)
-setTimeout(function() {
-    console.log(3); 
-},0)
-console.log(4);
+异步任务进一步分析
+
+```js
+console.log(1)
+setTimeout(function () {
+  console.log(2)
+}, 1000)
+setTimeout(function () {
+  console.log(3)
+}, 0)
+console.log(4)
 
 /*
     猜测是：1、4、2、3   但实际上是：1、4、3、2
@@ -54,21 +59,22 @@ Event Queue中读取事件执行。（因为3的事情先完成了，所以先�
 Event Queue中，所以先执行的是3而不是在前面的2）
 */
 ```
+
 宏任务和微任务
+
 ```js
-console.log(1);
-setTimeout(function() {
-    console.log(2)
-},1000);
- 
-new Promise(function(resolve) {
-    console.log(3);
-    resolve();
-}
-).then(function() {
-    console.log(4)
-});
-console.log(5);
+console.log(1)
+setTimeout(function () {
+  console.log(2)
+}, 1000)
+
+new Promise(function (resolve) {
+  console.log(3)
+  resolve()
+}).then(function () {
+  console.log(4)
+})
+console.log(5)
 /*
     以同步异步的方式来判断的结果应该是：1、3、5、2、4
     但是事实上结果是：1、3、5、4、2
@@ -78,43 +84,45 @@ console.log(5);
 执行完毕之后进入下一个事件循环中，或者说执行下一个宏任务
 */
 ```
-是否彻底理解JavaScript执行机制实例
+
+是否彻底理解 JavaScript 执行机制实例
+
 ```js
-console.log('1');
- 
-setTimeout(function() {
-    console.log('2');
-    process.nextTick(function() {
-        console.log('3');
-    })
-    new Promise(function(resolve) {
-        console.log('4');
-        resolve();
-    }).then(function() {
-        console.log('5')
-    })
+console.log('1')
+
+setTimeout(function () {
+  console.log('2')
+  process.nextTick(function () {
+    console.log('3')
+  })
+  new Promise(function (resolve) {
+    console.log('4')
+    resolve()
+  }).then(function () {
+    console.log('5')
+  })
 })
-process.nextTick(function() {
-    console.log('6');
+process.nextTick(function () {
+  console.log('6')
 })
-new Promise(function(resolve) {
-    console.log('7');
-    resolve();
-}).then(function() {
-    console.log('8')
+new Promise(function (resolve) {
+  console.log('7')
+  resolve()
+}).then(function () {
+  console.log('8')
 })
- 
-setTimeout(function() {
-    console.log('9');
-    process.nextTick(function() {
-        console.log('10');
-    })
-    new Promise(function(resolve) {
-        console.log('11');
-        resolve();
-    }).then(function() {
-        console.log('12')
-    })
+
+setTimeout(function () {
+  console.log('9')
+  process.nextTick(function () {
+    console.log('10')
+  })
+  new Promise(function (resolve) {
+    console.log('11')
+    resolve()
+  }).then(function () {
+    console.log('12')
+  })
 })
 
 /*
