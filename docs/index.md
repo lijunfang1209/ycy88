@@ -6,12 +6,12 @@
     <div class="yb-title">前端博客小站</div>
     <p class="description">全方位涵盖技术团队规范、全栈技能、算法、主流技术和团队管理的关键元素。</p>
     <p class="actions">
-      <a class="route-link action-button primary" href="/keywords/" aria-label="核心关键词">核心关键词 </a>
+      <a class="route-link action-button primary" href="/standard/" aria-label="前端规范">前端规范 </a>
       <a class="route-link action-button secondary" href="/node/" aria-label="Node系列">Node系列</a>
       <a class="route-link action-button secondary" href="/vue/" aria-label="VUE系列">VUE系列</a>
       <a class="route-link action-button secondary" href="/mp/" aria-label="小程序系列">小程序系列</a>
       <a class="route-link action-button secondary" href="/react/" aria-label="React系列">React系列</a>
-      <a class="route-link action-button secondary" href="/informal-essay/" aria-label="工作思考">工作思考</a>
+      <a class="route-link action-button secondary" href="/interview/" aria-label="面试总结">面试总结</a>
     </p>
   </header>
   <div class="features">
