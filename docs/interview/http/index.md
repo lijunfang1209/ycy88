@@ -1,7 +1,9 @@
-## HTTP面试总结
+# HTTP 面试总结
+
 <!-- {foldName:HTTP面试} -->
+
 ::: tip 专题简介
-从Vue系列，js系列，性能优化，http等
+从 Vue 系列，js 系列，性能优化，http 等
 :::
 
 <!-- ::: tip
