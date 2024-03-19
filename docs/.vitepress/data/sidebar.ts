@@ -1,95 +1,47 @@
-import { getChildren } from "../utils/getFold";
-export const sidebar = {
-  '/vue/':getChildren({ele:'vue'}),
-  '/standard/':[
-    {
-      text: "前端规范",
-      items: getChildren({ele:'standard'}),
-    },
-  ],
-  "/tools/": getChildren({ele:'tools'}),
-  "/protocol/": [
-    {
-      text: "协议相关",
-      link: "/protocol/",
-      items:getChildren({ele:'protocol'})
+import fs from 'fs'
+import path from 'path'
+
+import { getChildren } from '../utils/getFold'
+
+const BASE_PATH = './docs'
+const sidebar = {}
+
+// 读取目录下的所有文件夹
+fs.readdirSync(BASE_PATH).forEach(async (folder) => {
+  const folderPath = path.join(BASE_PATH, folder)
+
+  // 检查当前路径是否为文件夹
+  const stats = fs.statSync(folderPath)
+  if (stats.isDirectory() && folder !== '.vitepress') {
+    // 读取文件夹中的index.md文件
+    const indexPath = path.join(folderPath, 'index.md')
+    if (fs.existsSync(indexPath)) {
+      const data = fs.readFileSync(indexPath, 'utf8')
+
+      // 如果index.md文件中包含"title"字样的内容
+      let title = ''
+      if (data.startsWith('---')) {
+        const sIndex = data.indexOf('title:')
+        const nData = data.slice(sIndex)
+        title = nData.slice(6, nData.indexOf('\n'))
+      } else {
+        title = data
+          .slice(0, data.indexOf('\n'))
+          .replace('### ', '')
+          .replace('## ', '')
+          .replace('# ', '')
+      }
+
+      // 添加到 sidebar 对象中
+      sidebar[`/${folder}/`] = [
+        {
+          text: title,
+          link: `/${folder}/`,
+          items: await getChildren({ ele: folder })
+        }
+      ]
     }
-  ],
-  "/efficiency/": [
-    {
-      text: "效率相关",
-      link: "/efficiency/",
-      items:getChildren({ele:'efficiency'})
-    }
-  ],
-  '/react/':getChildren({ele:'react'}),
-   "/ts/": [
-      {
-        text: "Typescript系列",
-        link: "/ts/",
-        items: getChildren({ele:'ts'}),
-      },
-    ],
-   "/node/":getChildren({ele:'node'}),
-    "/mp/":getChildren({ele:'mp'}),
-    "/flutter/": [
-      {
-        text: "Flutter 系列",
-        link: "/flutter/",
-        items: getChildren({ele:'flutter'}),
-      },
-    ],
-    "/electron/": [
-      {
-        text: "Electron 系列",
-        link: "/electron/",
-        items: getChildren({ele:'electron'}),
-      },
-    ],
-    "/algorithm/": getChildren({ele:'algorithm'}),
-    "/js-base/": [
-      {
-        text: "JS基础",
-        link: "/js-base/",
-        items: getChildren({ele:'js-base'}),
-      },
-    ],
-    "/js-theory/": [
-      {
-        text: "JS原理",
-        link: "/js-theory/",
-        items: getChildren({ele:'js-theory'}),
-      },
-    ],
-    "/js-advanced/": [
-      {
-        text: "JS进阶",
-        link: "/js-advanced/",
-        items: getChildren({ele:'js-advanced'}),
-      },
-    ],
-    "/readbook/": [
-      {
-        text: "读书破万卷",
-        link: "/readbook/",
-        items: getChildren({ele:'readbook'}),
-      },
-    ],
-    "/think/": [
-      {
-        text: "技术思维",
-        link: "/think/",
-        items: getChildren({ele:'think'}),
-      },
-    ],
-    "/mgt/": [
-      {
-        text: "管理思维",
-        link: "/mgt/",
-        items: getChildren({ele:'mgt'}),
-      },
-    ],
-    // "/vueInterview/": getChildren({ele:'vueInterview'}),
-    // "/jsInterview/": getChildren({ele:'jsInterview'}),
-    "/interview/": getChildren({ele:'interview',collapsed:true}),
   }
+})
+
+export { sidebar }
