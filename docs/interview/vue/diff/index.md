@@ -1,6 +1,4 @@
-# Vue 面试总结专题
-
-<!-- {foldName:vue2和Vue3比较} -->
+# vue2和Vue3比较
 
 ::: tip 专题简介
 比较 vue2 和 vue3 的不同
