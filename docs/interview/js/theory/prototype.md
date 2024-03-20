@@ -136,32 +136,4 @@ console.log(child2);
 }
  **/
 ```
-
-### 10、new 的时候做了什么，手动实现 new 方法？
-1. 首先创建一个空对像。
-2. 建立原型和原型链的关系。
-3. 绑定 this 指向构造函数实列。
-4. 返回构造函数实列。
-
-```js
-//实现new方法的
-let Person = function () {
-  this.name = "xxx";
-  this.age = 28;
-};
-let newMethod = function (Parent, ...rest) {
-  //创建一个对象，以构造函数的原型为基础创建
-  let child = Object.create(Parent.Property);
-  //绑定this到实列上
-  let result = Parent.apply(child, rest);
-  //返回当前实列,构造函数没有手动返回值，就返回当前创建的实列。
-  return typeof result === "object" ? result : child;
-};
-Person.Property = {
-  sex: "girl",
-};
-let person1 = newMethod(Person);
-console.log(person1.age); //28
-console.log(person1.sex); //girl
-```
 参考地址:https://www.cnblogs.com/echolun/p/12321869.html
