@@ -164,3 +164,4 @@ let person1 = newMethod(Person);
 console.log(person1.age); //28
 console.log(person1.sex); //girl
 ```
+参考地址:https://www.cnblogs.com/echolun/p/12321869.html
