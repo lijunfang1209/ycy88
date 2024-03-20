@@ -4,7 +4,7 @@ import path from 'path'
 // https://vitepress.dev/reference/site-config
 
 export default defineConfig({
-  title: '前端博客小站 - Ms. Li',
+  title: '前端博客小站 - Jun',
   description: '技术清单文档',
   themeConfig: {
     search: {
