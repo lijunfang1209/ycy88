@@ -1,4 +1,4 @@
-## Hello React
+# React
 
 ::: tip 专题简介
 React 专题

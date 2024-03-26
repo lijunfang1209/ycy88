@@ -1,6 +1,4 @@
-# Hello React
-
-<!-- {foldName:react系列插件} -->
+# react系列插件
 
 ::: tip 专题简介
 React 专题

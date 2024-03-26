@@ -1,4 +1,4 @@
-### Hello 算法（algorithm）
+### 算法
 
 ::: tip 专题简介
 算法（algorithm）专题

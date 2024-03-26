@@ -1,6 +1,4 @@
-# Hello Node
-
-<!-- {foldName:Node框架实战} -->
+# Node框架实战
 
 ::: tip 专题简介
 Node 专题
